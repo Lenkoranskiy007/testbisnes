@@ -55,49 +55,51 @@ function App() {
 const Main = (props) => {
   return <>
 {
-  
+  props.item && props.item.map(item => {
+      return <div className="content">
+      <div className="content__title">
+  <p>{item.title}</p>
+         
+          </div>
+          <div className="content__block">
+            <div className="module">
+            
+            <div className="module__title">
+              <div className="module__title__icon"> <img src={Icon} alt="icon"/></div>
+            <div className="module__title__number"> <p>1 Модуль</p></div>
+              </div> 
+            <div className="specialized">
+             <ul className="list">
+              <li><span>Маркетинговые стратегии антикризисного менеджмента</span> </li>
+              <li><span> Антикризисное управление предприятиями: реструктуризация, банкротство, слияние и поглощение</span></li>
+              <li><span>Правовые основы антикризисного управления</span> </li>
+              <li><span>Проектный менеджмент в антикризисном управлении</span> </li>
+             <li><span>Проектный менеджмент в антикризисном управлении</span> </li>  
+             </ul>
+            </div>
+            </div>
+            <div className="module">
+              <div className="module__title__icon">
+              <img src={Icon} alt="icon"/>
+               <p className="module__title__number">2 Модуль</p>
+              </div>
+            
+            <div className="specialized">
+             <ul className="list">
+              <li><span>Маркетинговые стратегии антикризисного менеджмента</span> </li>
+              <li><span> Антикризисное управление предприятиями: реструктуризация, банкротство, слияние и поглощение</span></li>
+              <li><span>Правовые основы антикризисного управления</span> </li>
+              <li><span>Проектный менеджмент в антикризисном управлении</span> </li>
+             <li><span>Проектный менеджмент в антикризисном управлении</span> </li>  
+             </ul>
+            </div>
+            </div>
+          </div>
+        </div>  
+  })
 }
 
-<div className="content">
-       <div className="content__title">
-           <p>Антикризисное управление</p>
-          
-           </div>
-           <div className="content__block">
-             <div className="module">
-             
-             <div className="module__title">
-               <div className="module__title__icon"> <img src={Icon} alt="icon"/></div>
-             <div className="module__title__number"> <p>1 Модуль</p></div>
-               </div> 
-             <div className="specialized">
-              <ul className="list">
-               <li><span>Маркетинговые стратегии антикризисного менеджмента</span> </li>
-               <li><span> Антикризисное управление предприятиями: реструктуризация, банкротство, слияние и поглощение</span></li>
-               <li><span>Правовые основы антикризисного управления</span> </li>
-               <li><span>Проектный менеджмент в антикризисном управлении</span> </li>
-              <li><span>Проектный менеджмент в антикризисном управлении</span> </li>  
-              </ul>
-             </div>
-             </div>
-             <div className="module">
-               <div className="module__title__icon">
-               <img src={Icon} alt="icon"/>
-                <p className="module__title__number">2 Модуль</p>
-               </div>
-             
-             <div className="specialized">
-              <ul className="list">
-               <li><span>Маркетинговые стратегии антикризисного менеджмента</span> </li>
-               <li><span> Антикризисное управление предприятиями: реструктуризация, банкротство, слияние и поглощение</span></li>
-               <li><span>Правовые основы антикризисного управления</span> </li>
-               <li><span>Проектный менеджмент в антикризисном управлении</span> </li>
-              <li><span>Проектный менеджмент в антикризисном управлении</span> </li>  
-              </ul>
-             </div>
-             </div>
-           </div>
-         </div>  
+
   </>
 }
 
