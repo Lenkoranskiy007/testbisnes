@@ -75,13 +75,13 @@ const Total = () => {
 
 const Main = (props) => {
 
-  const [popup, setPopup ] = useState(false)
   const [selected, setSelected] = useState(null)
-  const toogle = (index) => {
-    if (selected == index) {
+  const toogle = (id) => {
+    console.log(id)
+    if (selected == id) {
       return setSelected(null)
     }
-    setSelected(index)
+    setSelected(id)
   } 
 
  
@@ -99,7 +99,7 @@ const Main = (props) => {
           <div className="content__block">
             
             
-            { props.item[item].map((programItem, index) => {
+            { props.item[item].map((programItem, programItemIndex) => {
              
 
               
@@ -107,13 +107,13 @@ const Main = (props) => {
                 
               <div  className="module__title">
                 <div className="lineImg"  > <img src={Line} alt="icon"/></div>
-                <div onClick={() => toogle(index)}  className='number'>
-                  {selected == index ? <img src={Icon}/> : <img src={Minus}/> }
-                
-                    <p>{index + 1} модуль
+                <div onClick={() => toogle(programItem._id)}  className={selected == programItem._id ? 'number-red': 'number'}>
+                  {selected == programItem._id ? <img src={Icon}/> : <img src={Minus}/> }
+               
+                    <p>{programItemIndex + 1} модуль
                   </p></div>
               </div> 
-            <div  className={selected == index ?  "specialized" : "specialized-popup" }>
+            <div  className={selected == programItem._id?  "specialized-popup" : "specialized" }>
              <ul className="list">
                { programItem.specializedSubjects && programItem.specializedSubjects.map((subject, subjectIndex) => {
 
@@ -152,9 +152,5 @@ const Main = (props) => {
  
   </>
 }
-
-
-
-
 
 export default App;
